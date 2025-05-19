@@ -1,12 +1,19 @@
 import React from 'react';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import HomeCards from './components/HomeCards';
+import JobListings from './components/JobListings';
+import ViewAllJobs from './components/ViewAllJobs';
 
 function App() {
 
   return (
     <>
-      <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+      <Navbar/>
+      <Hero/>
+      <HomeCards/>
+      <JobListings/>
+      <ViewAllJobs/>
     </>
   )
 }
