@@ -1,6 +1,15 @@
 import React from 'react'
+import{FaMapMarker} from 'react-icons/fa'
+import { Link } from 'react-router-dom';
 
 function JobListing({job}) {
+    const [showFullDescription, setShowFullDescription] = React.useState(false);
+    let description = job.description;
+    if (!showFullDescription){
+        description = description.substring(0,115) + '...';
+    }
+
+
   return (
     <div className="relative bg-white shadow-md rounded-xl">
             <div className="p-4">
@@ -10,8 +19,13 @@ function JobListing({job}) {
                 </div>
 
                 <div className="mb-5">
-                    {job.description}
+                    {description}
                 </div>
+
+                <button className="mb-5 text-indigo-500 hover:text-indigo-600"
+                    onClick={() => setShowFullDescription((prevState) => !prevState)}
+                >
+                    {showFullDescription? 'Less':'More'}</button>
 
                 <h3 className="mb-2 text-indigo-500">{job.salary}</h3>
 
@@ -19,15 +33,15 @@ function JobListing({job}) {
 
                 <div className="flex flex-col justify-between mb-4 lg:flex-row">
                 <div className="mb-3 text-orange-700">
-                    <i className="text-lg fa-solid fa-location-dot"></i>
+                    <FaMapMarker/>
                     {job.location}
                 </div>
-                <a
-                    href="job.html"
+                <Link
+                    to="job.html"
                     className="h-[36px] bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-lg text-center text-sm"
                 >
                     Read More
-                </a>
+                </Link>
             </div>
         </div>
     </div>
