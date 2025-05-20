@@ -12,7 +12,7 @@ function HomeCards() {
               Browse our React jobs and start your career today
             </p>
             <a
-              href="/jobs.html"
+              to="/jobs.html"
               className="inline-block px-4 py-2 text-white bg-black rounded-lg hover:bg-gray-700"
             >
               Browse Jobs
@@ -24,7 +24,7 @@ function HomeCards() {
               List your job to find the perfect developer for the role
             </p>
             <a
-              href="/add-job.html"
+              to="/add-job.html"
               className="inline-block px-4 py-2 text-white bg-indigo-500 rounded-lg hover:bg-indigo-600"
             >
               Add Job
