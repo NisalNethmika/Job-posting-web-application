@@ -1,12 +1,27 @@
 //import { useState, useEffect } from 'react'
-import { useParams, useLoaderData} from 'react-router-dom'
+import { useParams, useLoaderData, useNavigate} from 'react-router-dom'
 //import Spinner from './Spinner'
 import { FaArrowLeft, FaMapMarker } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
+import { toast } from 'react-toastify'
 
-function JobPage() {
+function JobPage({deleteJob}) {
     const { id } = useParams()
     const job = useLoaderData()
+    const navigate = useNavigate()
+
+    const onDeleteClick = async (id) => {
+        const confirm = window.confirm('Are you sure you want to delete this job?')
+        if(!confirm) {
+            return
+        }
+
+        deleteJob(id)
+
+        toast.success('Job deleted successfully')
+        
+        navigate('/jobs')   
+    }
       
     //const [job, setJob] = useState(null)
     //const [loading, setLoading] = useState(true)
@@ -108,12 +123,13 @@ function JobPage() {
                     <div className="p-6 mt-6 bg-white rounded-lg shadow-md">
                     <h3 className="mb-6 text-xl font-bold">Manage Job</h3>
                     <Link
-                        to="/add-job.html"
+                        to={`/edit-job/${job.id}`}
                         className="block w-full px-4 py-2 mt-4 font-bold text-center text-white bg-indigo-500 rounded-full hover:bg-indigo-600 focus:outline-none focus:shadow-outline"
                         >Edit Job
                     </Link>
                     <button
                         className="block w-full px-4 py-2 mt-4 font-bold text-white bg-red-500 rounded-full hover:bg-red-600 focus:outline-none focus:shadow-outline"
+                        onClick={() => onDeleteClick(job.id)}
                     >
                         Delete Job
                     </button>
