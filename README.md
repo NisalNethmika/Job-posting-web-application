@@ -29,13 +29,13 @@ A modern job listing platform built with React, allowing users to browse, add, e
 ## Demo
 
 ### Home Page
-![Home Page](public\HomePage.png)
+![Home Page](public/HomePage.png)
 
 ### Jobs Listing
-![Jobs Listing](public\JobsPage.png)
+![Jobs Listing](public/JobsPage.png)
 
 ### Job Details
-![Job Details](public\JobDetailsPage.png)
+![Job Details](public/JobDetailsPage.png)
 
 
 ## API Endpoints
