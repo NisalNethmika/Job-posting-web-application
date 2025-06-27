@@ -74,7 +74,3 @@ The application uses a JSON Server mock backend with the following endpoints:
 ### Deleting Jobs
 - Remove job listings through the job details page
 - Confirmation prompt before deletion
-
-## Acknowledgments
-
-- Traversy media youtube channel for making a tutorial for beginners.
